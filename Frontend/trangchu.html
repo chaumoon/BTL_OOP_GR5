@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trang Chủ - Đặt Vé Xe Khách</title>
+    <link rel="stylesheet" href="trangchu.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div id="hanoi_haiphong"class="header">
+        <div class="left">
+            <h1>Nhóm 5</h1>  <!-- Giữ ở vị trí bên trái -->
+        </div>
+        <div class="center">
+            <h2 id="tripTitle">Chào mừng đến với chúng tôi!</h2> <!-- Đặt ở giữa -->
+        </div>
+        <div class="right">
+            <h2>Liên hệ: 0813010446</h2>
+        </div>
+        
+        <div class="logo">
+            <img src="https://img.lovepik.com/original_origin_pic/19/01/07/4b5dcca1acbb615c893638ba35f98b03.png_wh860.png" alt="Logo Xe Khách" />
+        </div>
+        
+        <div class="navbar">
+            <a href="trangchu.html">Trang Chủ</a>
+            <a href="lien_he.html">Liên Hệ</a>
+            <a href="gioi_thieu.html">Giới Thiệu</a>
+        </div>
+        
+    </div>
+    
+    <form onsubmit="fetchBookingData(event)">
+        <label>Điểm đi:</label>
+        <select name="departureLocation" id = "departureLocation" required>
+            <option value="">Chọn điểm đi</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Hải Phòng">Hải Phòng</option>
+            <option value="Hải Dương">Hải Dương</option>
+            <option value="Nghệ An">Nghệ An</option>
+            <option value="Quảng Ninh">Quảng Ninh</option>
+            <option value="Lào Cai">Lào Cai</option>
+            <option value="Thanh Hóa">Thanh Hóa</option>
+        </select>
+    
+        <label>Điểm đến:</label>
+        <select name="arrivalLocation" id = "arrivalLocation"required>
+            <option value="">Chọn điểm đến</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Hải Phòng">Hải Phòng</option>
+            <option value="Hải Dương">Hải Dương</option>
+            <option value="Nghệ An">Nghệ An</option>
+            <option value="Quảng Ninh">Quảng Ninh</option>
+            <option value="Lào Cai">Lào Cai</option>
+            <option value="Thanh Hóa">Thanh Hóa</option>
+        </select>
+        <label>Ngày đi:</label>
+        <input type="date" name="departureDate" id ="departureDate"required />
+        <button type="submit">Tìm kiếm</button>
+    </form>
+    <div class="clock-container">
+        <!-- Nhãn bằng Font Awesome -->
+        <div class="label">
+          <i class="fas fa-clock"></i> <!-- Thay đổi biểu tượng -->
+        </div>
+
+    <div class="footer-images-container">
+        <img src="https://carshop.vn/wp-content/uploads/2022/07/images1151040_xekhach.jpg" alt="Hình ảnh xe khách" class="footer-image" />
+        <img src="https://thuexengay.com/uploads/noi_that_xe_45_cho_1578046388.png" alt="Hình ảnh ghế ngồi" class="footer-image-char"/>
+    </div>
+
+    <section class="about-section">
+        <h2>Giới Thiệu Về Nhà Xe</h2>
+        <p>Chúng tôi cung cấp các dịch vụ xe khách chất lượng cao, với đội ngũ tài xế giàu kinh nghiệm và cam kết mang đến cho khách hàng một chuyến đi an toàn và thoải mái. Nhà xe của chúng tôi chuyên phục vụ các tuyến đường từ các thành phố lớn như Hà Nội, Sài Gòn, Đà Nẵng, Nha Trang và nhiều địa phương khác. Chúng tôi cung cấp dịch vụ đặt vé trực tuyến tiện lợi, giúp khách hàng dễ dàng tìm kiếm chuyến đi phù hợp với nhu cầu của mình.</p>
+        <p>Với mục tiêu không ngừng nâng cao chất lượng dịch vụ, nhà xe của chúng tôi luôn sẵn sàng lắng nghe ý kiến đóng góp của khách hàng để cải thiện dịch vụ mỗi ngày. Hãy đến với chúng tôi để có những trải nghiệm tuyệt vời trên mỗi chuyến đi!</p>
+    </section>
+
+    <div class="footer-navbar">
+        <a href="/about">Giới Thiệu</a>
+        <a href="/contact">Liên Hệ</a>
+    </div>
+
+<!-- cửa sổ đang nhập -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Đăng Nhập</h2>
+        <form action="/login" method="post">
+            <table>
+                <tr>
+                    <td><label for="username">Tên đăng nhập:</label></td>
+                    <td><input type="text" id="username" name="username" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Mật khẩu:</label></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Đăng Nhập</button></td>
+                </tr>
+            </table>
+        </form>
+        <!-- Phần đăng ký nằm dưới cùng -->
+        <p>Chưa có tài khoản? <a href="javascript:void(0);" onclick="openRegisterModal()">Đăng ký ngay</a></p>
+    </div>
+</div>
+
+<!-- Modal đăng ký -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2>Đăng Ký</h2>
+        <form action="/register" method="post">
+            <table>
+                <tr>
+                    <td><label for="fullName">Họ và tên:</label></td>
+                    <td><input type="text" id="fullName" name="fullName" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phoneNumber">Số điện thoại:</label></td>
+                    <td><input type="text" id="phoneNumber" name="phoneNumber" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Mật khẩu:</label></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Đăng Ký</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <!-- Liên kết quay lại đăng nhập -->
+        <p>Đã có tài khoản? <a href="#" onclick="openLoginModal()">Đăng nhập ngay</a></p>
+    </div>
+    <div class="results"></div>
+
+</div>
+<script src="trangchu.js"></script>
+
+</body>
+</html>

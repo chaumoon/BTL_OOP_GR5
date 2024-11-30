@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Đặt Vé</title>
+    <link rel="stylesheet" href="thong_tin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <div id="hanoi_haiphong"class="header">
+        <div class="left">
+            <h1>Nhóm 5</h1>  <!-- Giữ ở vị trí bên trái -->
+        </div>
+        <div class="center">
+            <h2 id="tripTitle">Thông tin của bạn</h2> <!-- Đặt ở giữa -->
+        </div>
+        <div class="right">
+            <h2>Liên hệ: 0813010446</h2>
+        </div>
+        
+        <div class="logo">
+            <img src="https://img.lovepik.com/original_origin_pic/19/01/07/4b5dcca1acbb615c893638ba35f98b03.png_wh860.png" alt="Logo Xe Khách" />
+        </div>
+        
+        <div class="navbar">
+            <a href="trangchu.html">Trang Chủ</a>
+            <a href="lien_he.html">Liên Hệ</a>
+            <a href="gioi_thieu.html">Giới Thiệu</a>
+        </div>
+        
+    </div>
+    
+    <div class="container">
+        <h3>Thông tin của bạn:</h3>
+        <table class="bang_thong_tin">
+            <tr>
+                <td>Họ tên:</td>
+                <td id="Name"></td>
+            </tr>
+            <tr>
+                <td>Số điện thoại:</td>
+                <td id="phoneNumber"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td id="Gmail"></td>
+            </tr>
+            <tr>
+                <td>Các ghế đã đặt:</td>
+                <td id="char"></td>
+            </tr>
+            <tr>
+                <td>Giá vé:</td>
+                <td id="price">150000</td>
+            </tr>
+            <tr>
+                <td>Tổng số tiền phải thanh toán:</td>
+                <td id="pay"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Xác nhận thanh toán</button></td>
+            </tr>
+        </table>
+        
+    </div>
+    <script src="thongtin.js"></script>
+    
+</body>
+</html>

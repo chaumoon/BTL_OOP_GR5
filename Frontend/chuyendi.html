@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giá vé và chọn ghế Hà Nội - Hải Phòng</title>
+    <link rel="stylesheet" href="hanoi_haiphong.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="hanoi_haiphong"class="header">
+        <div class="left">
+            <h1>Nhóm 5</h1>  <!-- Giữ ở vị trí bên trái -->
+        </div>
+        <div class="center">
+            <h2 id="tripTitle">Hà Nội - Hải Phòng</h2> <!-- Đặt ở giữa -->
+        </div>
+        <div class="right">
+            <h2>Liên hệ: 0813010446</h2>
+        </div>
+        
+        <div class="logo">
+            <img src="https://img.lovepik.com/original_origin_pic/19/01/07/4b5dcca1acbb615c893638ba35f98b03.png_wh860.png" alt="Logo Xe Khách" />
+        </div>
+        
+        <div class="navbar">
+            <a href="trangchu.html">Trang Chủ</a>
+            <a href="lien_he.html">Liên Hệ</a>
+            <a href="gioi_thieu.html">Giới Thiệu</a>
+        </div>
+        
+    </div>
+    
+    <h2 id="ketqua">Kết quả tìm được</h2>
+    <div class="container" id="tickets-container">
+        <!-- Các vé xe sẽ được tạo động ở đây -->
+    </div>
+    <!-- Modal chọn ghế -->
+    <div id="seatSelectionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="seat-grid">
+            </div>
+            <button class="buy-ticket-button">Mua</button>
+        </div>
+    </div>
+    <!-- Modal đăng ký -->
+    <div id="registerModal" class="KhachHang">
+        <div class="Thongtin">
+            <span class="close_Thongtin">&times;</span>
+            <h2>Điền thông tin</h2>
+            <form id="registerForm">
+                <table>
+                    <tr>
+                        <td><label for="Ho">Họ đệm:</label></td>
+                        <td><input type="text" id="fullName" name="fullName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Tên">Tên:</label></td>
+                        <td><input type="text" id="ten" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="so_dien_thoai">Số điện thoại:</label></td>
+                        <td><input type="text" id="sdt" name="sdt" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Gmail">Gmail:</label></td>
+                        <td><input type="email" id="gmail" name="gmail" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button class="xacnhan_thongtin"type="button" id="submitBtn">Xác Nhận</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="results"></div>
+    </div>
+    <script src="hanoi_haiphong.js"></script>
+    
+</body>
+</html>

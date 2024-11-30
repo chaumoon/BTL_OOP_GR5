@@ -1,0 +1,403 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #607ec3;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    height: 3cm;
+    position: relative;
+}
+
+.left {
+    position: absolute;
+    top: 1.5cm; /* Cách mép trên 1,5 cm */
+    left: 3.5cm;  /* Cách mép trái 3 cm */
+    color: white;
+}
+
+
+.center {
+    position: absolute;
+    top: 1.5cm; /* Cách mép trên 1,5 cm */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    text-align: center;
+    color: white;
+}
+
+
+.right {
+    flex: 1;
+    text-align: right;
+}
+
+.logo {
+    width: 3cm;
+    height: 3cm;
+    border-radius: 50%;
+    background-color: #e1e4eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.logo img {
+    width: 2.5cm;
+    height: 2.5cm;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar {
+    position: absolute;
+    top: 2.5cm;  /* Cách mép trên màn hình 2,5 cm */
+    left: 50%;
+    transform: translateX(-50%);  /* Căn giữa theo chiều ngang */
+    display: flex;
+    gap: 2cm;  /* Khoảng cách giữa các liên kết */
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #607ec3;
+    border-radius: 5px;
+}
+
+
+
+.login-link {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 1;
+    color: white;
+}
+
+h1, h2 {
+    margin: 0;
+    color: white !important;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-bottom: 2px solid #607ec3;
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+}
+
+form input, form button, form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #607ec3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    display: flex;
+    border: 2px solid #607ec3; /* Màu xanh cho khung */
+    width: 80%;
+    margin: 30px auto;
+    flex-wrap: wrap; /* Cho phép các vé xuống dòng khi không đủ không gian */
+    justify-content: flex-start;
+    /* justify-content: space-between; Đảm bảo các vé có khoảng cách đều */
+    gap: 50px; /* Khoảng cách giữa các vé */
+    margin-top: 1cm;
+    padding: 3mm;
+}
+
+.ticket {
+    flex: 1 1 30%; /* Các vé sẽ chiếm 30% chiều rộng của container và co dãn khi cần */
+    max-width: 30%; /* Đảm bảo mỗi vé không chiếm quá 30% */
+    border: 2px solid #607ec3 !important; 
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+    padding: 20px;
+    border: 1px solid ;
+    text-align: left;
+    background-color: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 250px; /* Đảm bảo vé không quá nhỏ khi màn hình nhỏ */
+}
+
+h1, h2 {
+    color: #607ec3;
+}
+
+.ticket h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ticket p {
+    margin: 5px 0;
+}
+
+.ticket .seat-selection-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các thành phần */
+}
+
+.ticket label {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.ticket select {
+    padding: 5px;
+    font-size: 16px;
+    margin: 5px 0;
+    width: 100px;  /* Điều chỉnh chiều rộng của ô chọn */
+    height: 30px; /* Điều chỉnh chiều cao của ô chọn */
+}
+
+/* Đảm bảo nút "Chọn ghế" và "Mua" hiển thị cùng dòng */
+.choose-seat-button, .buy-ticket-button {
+    padding: 8px 12px;  /* Giữ chiều cao không thay đổi, chỉ giảm chiều ngang */
+    font-size: 14px;     /* Giảm kích thước chữ */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 120px;       /* Đặt chiều rộng cố định để giảm chiều ngang */
+}
+
+.choose-seat-button {
+    background-color: #737fa3;
+    color: white;
+}
+
+.buy-ticket-button {
+    background-color: #607ec3;
+    color: white;
+    font-size: 16px;     /* Giảm kích thước chữ cho buy-ticket-button */
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 8px 12px;   /* Giảm padding cho buy-ticket-button */
+    width: 120px;        /* Đặt chiều rộng cố định cho buy-ticket-button */
+}
+
+
+
+/* Căn chỉnh các nút "Chọn ghế" và "Mua" ngang với nhau */
+.ticket .seat-selection-container button {
+    margin-left: 50px; /* Khoảng cách giữa các nút */
+}
+
+.buy-ticket-button:hover, .choose-seat-button:hover {
+    background-color: #c7d3c8;
+}
+
+h4 {
+    margin-top: 1cm !important;/* Cách phần tử phía trên 1.5cm */
+    margin-left: 4cm !important;   /* Cách mép trái màn hình 4cm */
+    font-size: 24px !important;   /* Điều chỉnh kích thước chữ nếu cần */
+    color: #607ec3;     /* Đặt màu sắc cho tiêu đề nếu cần */
+}
+/* Modal tổng */
+/* Modal */
+/* Modal Background */
+/* Kiểu dáng cho modal */
+.modal {
+    display: none; /* Modal sẽ ẩn đi khi chưa được kích hoạt */
+    position: fixed;
+    top: 50%; /* Đặt vị trí modal ở giữa màn hình theo chiều dọc */
+    left: 50%; /* Đặt vị trí modal ở giữa màn hình theo chiều ngang */
+    transform: translate(-50%, -50%); /* Căn chỉnh chính giữa */
+    width: 30%; /* Modal chiếm 30% chiều rộng màn hình */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Đảm bảo modal nằm trên các phần tử khác */
+}
+
+/* Kiểu dáng cho phần nội dung modal */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Nút đóng modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Kiểu dáng cho lưới ghế trong modal */
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Chia thành 7 cột */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Kiểu dáng cho từng ô ghế */
+.seat {
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.seat:hover {
+    background-color: #a0d0f0;
+}
+/* Thêm lớp modal cho các phần tử trong modal */
+/* Modal Container */
+/* Modal Container */
+
+/* Modal Content */
+/* Đảm bảo modal có chiều rộng hợp lý */
+.KhachHang {
+    display: none; /* Giữ nguyên là block hoặc none */
+    position: fixed; /* Đặt vị trí cố định trên toàn bộ màn hình */
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+    top: 0;
+    left: 0;
+}
+
+.Thongtin {
+    background-color: #fefefe;
+    position: absolute; /* Sử dụng absolute để căn giữa */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển lại một nửa chiều cao và chiều rộng */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Các phần tử được sắp xếp theo chiều dọc */
+    align-items: stretch; /* Đảm bảo các phần tử chiếm toàn bộ chiều rộng */
+}
+
+.close_Thongtin {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; /* Đặt vị trí của nút đóng cố định */
+    top: 10px; /* Khoảng cách từ trên cùng */
+    right: 10px; /* Khoảng cách từ bên phải */
+    cursor: pointer;
+    z-index: 3; /* Đảm bảo nút đóng nằm trên cùng */
+}
+
+.close_Thongtin:hover,
+.close_Thongtin:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.Thongtin h2 {
+    margin-top: 0;
+    color: black !important;
+}
+
+.Thongtin label,
+.Thongtin input,
+.Thongtin button {
+    width: 100% !important; /* Đảm bảo chiếm toàn bộ chiều rộng */
+    display: block !important; /* Đảm bảo mỗi phần tử chiếm một dòng riêng biệt */
+    margin-bottom: 15px; /* Khoảng cách giữa các phần tử */
+}
+
+.Thongtin label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.Thongtin input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.Thongtin button {
+    background-color: #4c6aaf;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Thongtin button:hover {
+    background-color: #e3e7ee;
+}
+
+#registerModal .Thongtin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 350px; /* Thêm một chút độ rộng */
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#registerModal label, #registerModal input, #registerModal button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+#ketqua{
+    margin-top: 50px;
+    color: #333 !important;
+}

@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    padding-bottom: 50px; /* Thêm khoảng trống tránh footer che khuất nội dung */
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #607ec3;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    height: 3cm;
+    position: relative;
+}
+
+.left {
+    position: absolute;
+    top: 1.5cm; /* Cách mép trên 1,5 cm */
+    left: 3.5cm;  /* Cách mép trái 3 cm */
+    color: white;
+}
+
+
+.center {
+    position: absolute;
+    top: 1.5cm; /* Cách mép trên 1,5 cm */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    text-align: center;
+    color: white;
+}
+
+
+.right {
+    flex: 1;
+    text-align: right;
+}
+
+.logo {
+    width: 3cm;
+    height: 3cm;
+    border-radius: 50%;
+    background-color: #e1e4eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.logo img {
+    width: 2.5cm;
+    height: 2.5cm;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar {
+    position: absolute;
+    top: 2.5cm;  /* Cách mép trên màn hình 2,5 cm */
+    left: 50%;
+    transform: translateX(-50%);  /* Căn giữa theo chiều ngang */
+    display: flex;
+    gap: 2cm;  /* Khoảng cách giữa các liên kết */
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #607ec3;
+    border-radius: 5px;
+}
+
+
+
+.login-link {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 1;
+    color: white;
+}
+
+h1, h2 {
+    margin: 0;
+    color: white !important;
+}
+/* Định dạng cho phần văn bản nổi bật */
+.highlight {
+    font-weight: bold;
+    color: #dd4c33;
+}
+
+.highlight2 {
+    font-weight: bold;
+    color: #fdfdfd;
+}
+.highlight-background {
+    background-color: #4c6aaf; 
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    color: #ffffff; /* Màu chữ */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho phần văn bản */
+}
+/* Định dạng cho nội dung chính */
+.main {
+    width: 80%;
+    padding: 20px;
+    margin: auto; /* Đảm bảo căn giữa chính xác */
+}
+
+/* Định dạng cho các phần trong nội dung */
+section {
+    margin: 0 0 10px 0; 
+    padding: 10px;
+}
+
+#tien_ich{
+    margin: 0 0 30px 0;
+}
+/* Định dạng tiêu đề cấp 2 */
+h3 {
+    color: #060c66;
+    margin: 10px 0 10px 0; 
+}
+/* Định dạng danh sách */
+ul {
+    list-style-type: disc;
+    margin: 10px 0 10px 0; 
+}
+
+/* Định dạng hình ảnh */
+img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.vertical-table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho bảng */
+}
+
+.vertical-table th, .vertical-table td {
+    padding: 10px;
+    border: 1px solid #061f5b;
+    text-align: center; /* Căn giữa theo chiều ngang */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+.vertical-table th {
+    background-color: #4c6aaf;
+    color: #ffffff;
+    width: 30%; /* Định chiều rộng cột tiêu đề */
+}
+
+.vertical-table td {
+    background-color: #f3f4f6;
+    color: #020101;
+    width: 100%; /* Định chiều rộng cột dữ liệu */
+}
+/* Định dạng chân trang */
+footer {
+    background-color: #4c6aaf;
+    color: #fff;
+    text-align: center;
+    padding: 10px; /* Đặt khoảng đệm dọc là 10px */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    overflow: scroll;
+}
